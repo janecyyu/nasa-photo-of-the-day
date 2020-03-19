@@ -1,0 +1,19 @@
+.middle{
+    display: flex;
+}
+.content-container{
+    border: 1px solid red;
+    height: 300px;
+    width:80%;
+}
+.img-container{
+    border:1px solid red;
+    height: 300px;
+    width:20%;
+    overflow: hidden; 
+}
+.m-img{
+    object-fit: cover;
+    height: 300px;
+    width:100%;
+}
