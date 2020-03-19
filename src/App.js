@@ -3,7 +3,7 @@ import "./App.css";
 import Navigation from "./component/nav/navigation";
 import Header from "./component/header/header";
 import MiddleContent from "./component/middle-content/m-content";
-import Bottom from "./component/bottom-content/bottom-img"
+import BottomContent from "./component/bottom-content/bottom-img"
 
 function App() {
   return (
@@ -11,11 +11,11 @@ function App() {
       <Navigation />
       <Header />
       <MiddleContent />
-      <Bottom />
-      <p>
+      <BottomContent />
+      {/* <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun 🚀!
-      </p>
+      </p> */}
     </div>
   );
 }

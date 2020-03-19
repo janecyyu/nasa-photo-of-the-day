@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import "./m-content.css";
 import axios from "axios";
 import StoryCard from "./m-card";
+import { Button } from "@material-ui/core";
+import styled from "styled-components";
+import CustomizedRatings from "./rating";
+
+const ContentBox = styled.div`
+  display: flex;
+`;
 
 var currentDate = new Date();
 var today = new Date();
-
-// var prev_date = new Date();
-// prev_date.setDate(prev_date.getDate() - 1);
-
-// var next_date = new Date();
-// next_date.setDate(prev_date.getDate() + 1);
 
 function dateMaker(date) {
   var dd = String(date.getDate()).padStart(2, "0");
@@ -38,31 +38,6 @@ const MiddleContent = () => {
   }, [date]);
   return (
     <div className="m">
-      <button
-        onClick={() => {
-          currentDate.setDate(currentDate.getDate() - 1);
-          setDate(dateMaker(currentDate));
-        }}
-      >
-        previous
-      </button>
-      <button
-        onClick={() => {
-            currentDate.setDate(today.getDate());
-            setDate(dateMaker(today));
-        }}
-      >
-        today
-      </button>
-      <button
-        onClick={() => {
-          currentDate.setDate(currentDate.getDate() + 1);
-          setDate(dateMaker(currentDate));
-        }}
-      >
-        next
-      </button>
-
       <div className="entry">
         <StoryCard
           date={info.date}
@@ -71,6 +46,36 @@ const MiddleContent = () => {
           hdurl={info.hdurl}
         />
       </div>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          currentDate.setDate(currentDate.getDate() - 1);
+          setDate(dateMaker(currentDate));
+        }}
+      >
+        previous
+      </Button>{" "}
+      <Button
+        variant="contained"
+        color="secondary"
+        onClick={() => {
+          currentDate.setDate(today.getDate());
+          setDate(dateMaker(today));
+        }}
+      >
+        today
+      </Button>{" "}
+      <Button
+        variant="contained"
+        onClick={() => {
+          currentDate.setDate(currentDate.getDate() + 1);
+          setDate(dateMaker(currentDate));
+        }}
+      >
+        next
+      </Button>
+      <CustomizedRatings/>
     </div>
   );
 };
