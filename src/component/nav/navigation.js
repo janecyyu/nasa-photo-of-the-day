@@ -9,9 +9,12 @@ const NavBox = styled.div`
   justify-content: space-around;
   position:fixed;
   width:100%;
-  background-color:White;
+  background-color:#fff;
+  opacity:0.8;
   top:0;
   z-index:1;
+  margin-top:1%;
+  
 `;
 
 const Logo = styled.h2`
@@ -22,7 +25,7 @@ const Navigation = () => {
   return (
     <NavBox id="nav-bar">
       <Logo>Day by day</Logo>
-      <div>
+      {/* <div>
         <Badge href="#nav-bar" color="light">
           home
         </Badge>
@@ -32,7 +35,7 @@ const Navigation = () => {
         <Badge href="#" color="light">
           contact
         </Badge>
-      </div>
+      </div> */}
     </NavBox>
   );
 };

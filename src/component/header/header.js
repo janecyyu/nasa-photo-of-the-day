@@ -7,7 +7,7 @@ const HeaderImageBox = styled.div`
   width: 50%;
   height: 600px;
   display:flex;
-  margin: 10% 25% 1% 25%;
+  margin: 5% 25% 1% 25%;
   &:hover{
     opacity:0.9;
   }
@@ -18,7 +18,7 @@ const HeaderImg = styled.img`
 const HeaderTextOne = styled.h1`
   position: absolute;
   bottom:53%;
-  left:21%;
+  left:25%;
   color: white;
   font-size: 7rem;
   font-family: 'Liu Jian Mao Cao', cursive;
