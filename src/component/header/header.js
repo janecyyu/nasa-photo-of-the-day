@@ -6,30 +6,31 @@ const HeaderImageBox = styled.div`
   position: relative;
   width: 50%;
   height: 600px;
-  display:flex;
+  display: flex;
   margin: 5% 25% 1% 25%;
-  &:hover{
-    opacity:0.9;
+  &:hover {
+    opacity: 0.9;
   }
 `;
 const HeaderImg = styled.img`
   max-width: 100%;
 `;
 const HeaderTextOne = styled.h1`
+  text-align: center;
   position: absolute;
-  bottom:53%;
-  left:25%;
+  bottom:22%;
+  left:5%;
   color: white;
-  font-size: 7rem;
+  font-size: 5rem;
   font-family: 'Liu Jian Mao Cao', cursive;
 `;
 const HeaderTextTwo = styled.h1`
   position: absolute;
-  bottom:37%;
-  left:37%;
+  bottom: 10%;
+  left: 10%;
   color: white;
-  font-size: 7rem;
-  font-family: 'Liu Jian Mao Cao', cursive;
+  font-size: 5rem;
+  font-family: "Liu Jian Mao Cao", cursive;
 `;
 
 export default function Header() {
@@ -39,18 +40,18 @@ export default function Header() {
       .get(
         "https://api.nasa.gov/planetary/apod?date=2020-03-18&api_key=2h7Qg2rbJK3WTXXDKIDySG0VQeaCHWLdtW9eLgb2"
       )
-      .then(re => {
+      .then((re) => {
         console.log(re.data.hdurl);
         setBgc(re.data.hdurl);
       })
-      .catch(err => console.log("error", err));
+      .catch((err) => console.log("error", err));
   }, []); //only one time
 
   return (
     <HeaderImageBox>
       <HeaderImg className="header-bgc" src={bgc} alt="dark sky" />
-      <HeaderTextOne>Beautiful</HeaderTextOne>
-      <HeaderTextTwo>Day</HeaderTextTwo>
+      {/* <HeaderTextOne>Beautiful</HeaderTextOne>
+      <HeaderTextTwo>Day</HeaderTextTwo> */}
     </HeaderImageBox>
   );
 }
